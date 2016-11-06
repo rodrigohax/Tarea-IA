@@ -3,10 +3,8 @@ package TareaIA;
 import java.awt.Canvas;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.event.InputEvent;
+import java.awt.Point;
 import java.awt.event.KeyEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
@@ -20,6 +18,7 @@ public class Lienzo extends Canvas implements Constantes {
     public Auto auto, auto2, auto3;
     public Timer lanzadorTareas;
     public Jugador jugador;
+    public Peaton peaton;
 
     public Lienzo() {
         laberinto = new Laberinto(this);
@@ -27,6 +26,10 @@ public class Lienzo extends Canvas implements Constantes {
         auto = new Auto(laberinto,29,1);
         auto2 = new Auto(laberinto,29,7);
         jugador = new Jugador(laberinto);
+        
+        Point p1 = new Point(2,2);
+        Point p2 = new Point(18,6);
+        peaton = new Peaton(laberinto,p1,p2);
         
         try {
             fondo = ImageIO.read(new File("images/fondo.png"));
@@ -45,6 +48,7 @@ public class Lienzo extends Canvas implements Constantes {
         lanzadorTareas = new Timer();
         lanzadorTareas.scheduleAtFixedRate(auto, 0, 1000);
         lanzadorTareas.scheduleAtFixedRate(auto2, 0, 500);
+        lanzadorTareas.scheduleAtFixedRate(peaton, 0, 500);
     }
 
     public void update(Graphics g) {

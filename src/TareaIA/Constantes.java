@@ -9,5 +9,6 @@ public interface Constantes {
     public final char MUNDO = 'V';
     public final char OBSTACULO = 'O';
     public final char AUTO = 'A';
-    public final char PORTAL = 'P';
+    public final char BUZON = 'B';
+    public final char PEATON = 'P';
 }
