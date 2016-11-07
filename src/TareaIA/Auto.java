@@ -18,11 +18,13 @@ public class Auto extends TimerTask implements Constantes {
     }
 
     public void moverAuto() {
-        if (auto.X > 0) {
+        if (auto.X > 0 && laberinto.celdas[auto.X - 1][auto.Y].tipo != OBSTACULO
+                && laberinto.celdas[auto.X - 1][auto.Y].tipo != JUGADOR
+                && laberinto.celdas[auto.X - 1][auto.Y].tipo != PEATON) {
             laberinto.celdas[auto.X][auto.Y].tipo = MUNDO;
             auto.X = auto.X - 1;
             laberinto.celdas[auto.X][auto.Y].tipo = AUTO;
-        }else {
+        }else if(auto.X <= 0) {
             laberinto.celdas[auto.X][auto.Y].tipo = MUNDO;
             auto.X = x;
             auto.Y = y;
