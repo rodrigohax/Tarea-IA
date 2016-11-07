@@ -1,8 +1,6 @@
 package TareaIA;
 
-
 import java.util.TimerTask;
-import TareaIA.*;
 
 public class Auto extends TimerTask implements Constantes {
 

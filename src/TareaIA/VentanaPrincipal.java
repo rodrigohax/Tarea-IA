@@ -17,6 +17,7 @@ public class VentanaPrincipal extends JFrame {
         lienzo.requestFocus();
         this.getContentPane().setLayout(new BorderLayout());
         this.getContentPane().add(lienzo);
-        this.setSize(960,480);
+        this.setTitle("Tarea IA");
+        this.setSize(970,500);
     }
 }

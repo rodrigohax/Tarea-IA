@@ -16,7 +16,7 @@ public class Celda extends JComponent implements Constantes {
 
     //nuevos atributos para manejar imagenes
     public char tipo;
-    public BufferedImage jugador, obstaculo, camino, adversario, portal,peaton;
+    public BufferedImage jugador, obstaculo, camino, adversario,peaton,buzon;
 
     //constructor, inicializa los atributos
     public Celda(int x, int y, char tipo) {
@@ -25,10 +25,10 @@ public class Celda extends JComponent implements Constantes {
         this.tipo = tipo;
         try {
             jugador = ImageIO.read(new File("images/jugador.png"));
-          // obstaculo = ImageIO.read(new File("images/obstaculo.png"));
+            //obstaculo = ImageIO.read(new File("images/obstaculo.png"));
             adversario = ImageIO.read(new File("images/adversario.png"));
-            portal = ImageIO.read(new File("images/portal.png"));
             peaton = ImageIO.read(new File("images/peaton.png"));
+            buzon = ImageIO.read(new File("images/buzon.png"));
         } catch (IOException e) {
             System.out.println(e.toString());
         }
@@ -51,10 +51,10 @@ public class Celda extends JComponent implements Constantes {
                 break;
 
             case BUZON:
-                g.drawImage(portal, X, Y, this);
+                g.drawImage(buzon, X, Y, this);
                 break;
             case PEATON:
-                g.drawImage(peaton,X,Y,this);
+                g.drawImage(peaton, X, Y, this);
         }
     }
 

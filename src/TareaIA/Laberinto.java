@@ -8,13 +8,12 @@ public class Laberinto extends JComponent implements Constantes {
     public Celda[][] celdas;
     public Celda celdaMovimiento;
     public Lienzo lienzoPadre;
-    public Jugador jugador;
 
     public Laberinto(Lienzo lienzoPadre) {
         celdas = new Celda[ANCHO][ALTO];
-        
-        initMundo();
 
+        initMundo();        
+        
         insertarObstaculo(3, 6, 3, 6);
         insertarObstaculo(9, 12, 3, 6);
         insertarObstaculo(15, 18, 3, 6);
@@ -28,8 +27,7 @@ public class Laberinto extends JComponent implements Constantes {
         insertarObstaculo(27, 30, 9, 12);
 
         this.lienzoPadre = lienzoPadre;
-        this.jugador = new Jugador(this);
-        this.setSize(960, 480);
+        this.setSize(1280, 720);
     }
 
     @Override

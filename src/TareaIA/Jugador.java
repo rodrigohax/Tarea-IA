@@ -16,7 +16,8 @@ public class Jugador implements Constantes {
     
     public void moverCeldaArriba() {
         if (jugador.Y > 0 && laberinto.celdas[jugador.X][jugador.Y - 1].tipo != OBSTACULO
-                && laberinto.celdas[jugador.X][jugador.Y - 1].tipo != AUTO) {
+                && laberinto.celdas[jugador.X][jugador.Y - 1].tipo != AUTO
+                && laberinto.celdas[jugador.X][jugador.Y - 1].tipo != PEATON) {
             laberinto.celdas[jugador.X][jugador.Y].tipo = MUNDO;
             jugador.Y = jugador.Y - 1;
             laberinto.celdas[jugador.X][jugador.Y].tipo = JUGADOR;
@@ -25,7 +26,8 @@ public class Jugador implements Constantes {
 
     public void moverCeldaAbajo() {
         if (jugador.Y < ALTO - 1 && laberinto.celdas[jugador.X][jugador.Y + 1].tipo != OBSTACULO
-                && laberinto.celdas[jugador.X][jugador.Y + 1].tipo != AUTO) {
+                && laberinto.celdas[jugador.X][jugador.Y + 1].tipo != AUTO
+                && laberinto.celdas[jugador.X][jugador.Y + 1].tipo != PEATON) {
             laberinto.celdas[jugador.X][jugador.Y].tipo = MUNDO;
             jugador.Y = jugador.Y + 1;
             laberinto.celdas[jugador.X][jugador.Y].tipo = JUGADOR;
@@ -34,7 +36,8 @@ public class Jugador implements Constantes {
 
     public void moverCeldaIzquierda() {
         if (jugador.X > 0 && laberinto.celdas[jugador.X - 1][jugador.Y].tipo != OBSTACULO
-                && laberinto.celdas[jugador.X - 1][jugador.Y].tipo != AUTO) {
+                && laberinto.celdas[jugador.X - 1][jugador.Y].tipo != AUTO
+                && laberinto.celdas[jugador.X - 1][jugador.Y].tipo != PEATON) {
             laberinto.celdas[jugador.X][jugador.Y].tipo = MUNDO;
             jugador.X = jugador.X - 1;
             laberinto.celdas[jugador.X][jugador.Y].tipo = JUGADOR;
@@ -43,7 +46,8 @@ public class Jugador implements Constantes {
 
     public void moverCeldaDerecha() {
         if (jugador.X < ANCHO - 1 && laberinto.celdas[jugador.X + 1][jugador.Y].tipo != OBSTACULO
-                && laberinto.celdas[jugador.X + 1][jugador.Y].tipo != AUTO) {
+                && laberinto.celdas[jugador.X + 1][jugador.Y].tipo != AUTO
+                && laberinto.celdas[jugador.X + 1][jugador.Y].tipo != PEATON) {
             laberinto.celdas[jugador.X][jugador.Y].tipo = MUNDO;
             jugador.X = jugador.X + 1;
             laberinto.celdas[jugador.X][jugador.Y].tipo = JUGADOR;
